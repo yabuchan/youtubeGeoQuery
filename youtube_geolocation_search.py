@@ -50,10 +50,10 @@ def youtube_search(options):
   videos = []
 
   # Add each result to the list, and then display the list of matching videos.
-  for video_result in video_response.get("items", []):
-    videos.append("%s, (%s,%s)" % (video_result["snippet"]["title"],
-                              video_result["recordingDetails"]["location"]["latitude"],
-                              video_result["recordingDetails"]["location"]["longitude"]))
+#  for video_result in video_response.get("items", []):
+#    videos.append("%s, (%s,%s)" % (video_result["snippet"]["title"],
+#                              video_result["recordingDetails"]["location"]["latitude"],
+#                              video_result["recordingDetails"]["location"]["longitude"]))
   #videos.append(video_result)
 #  print (video_response)
 #  for video_result in video_response.get("items", []):
@@ -61,6 +61,7 @@ def youtube_search(options):
 #      title: video_result["snippet"]["title"]
 #      })
 #  print ("Videos:\n", "\n".join(videos), "\n")
+  print (video_response)
   return video_response
 
 
@@ -80,7 +81,7 @@ def listBrokerApi():
   argparser.add_argument("--q", help="Search term", default=keywords)
   argparser.add_argument("--location", help="Location", default=location)
   argparser.add_argument("--location-radius", help="Location radius", default="5km")
-  argparser.add_argument("--max-results", help="Max results", default=25)
+  argparser.add_argument("--max-results", help="Max results", default=10)
   args2 = argparser.parse_args()
   print (args2)
 #  try:
